@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	
+		<meta charset="UTF-8" />
+		<title>Multitrack audio project</title>
+		
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+		
+		<noscript> <link rel="stylesheet" type="text/css" href="css/noJS.css">
+		</noscript>
+		
+		<script src="jQuery/jquery-1.10.2.min.js">
+		</script>
+
+        <!-- slider -->
+		<script src="jQuery/jquery.nouislider.min.js"></script>
+		<link href="css/jquery.nouislider.css" type="text/css" rel="stylesheet">	
+				
+	</head>
+
+	<body>
+	
+		<noscript id="JSwarning">
+		It appears that Javascript is disabled in your browser, meaning some aspects of this website will not display or function correctly. 
+		<br> To learn how to enable Javascript, <a href="http://www.enable-javascript.com/"> click here </a>
+		</noscript>
+			
+				<div class="play disabled"><button>play</button></div>
+                <div class="pause disabled"><button>pause</button></div>
+				
+				<input type="range" step="any" value="0" id="seekbar">
+				<p id="timecode"></p>
+				<p id="negTimecode"></p>
+
+                <!-- TODO - checkall box -->
+				<p class="chall">Check all</p>
+				<input type="checkbox" class="checkbox" id="chall"> 
+                
+                <p class="mall">Mute all</p>
+				<input type="checkbox" class="checkbox" id="mall"> 
+
+
+                <table>
+                    <tr>
+				    	<th class="title">Track name</th>
+				    	<th class="onoff">On/off</th>
+				    	<th class="vol">Volume</th>
+		            </tr>
+
+				    <tr id="t1"> 
+                        <td class="tracknames">Piccollo</td>
+                        <td>
+ 				            <input type="checkbox" class="checkbox" id="ch1"> 
+                        </td>
+                        <td>
+                            <div id="s1"></div>
+				            <p id="v1" class="values">50%</p>
+                        </td>
+                    </tr>
+
+				    <tr id="t2">
+                        <td class="tracknames">Flute</td>
+                        <td>
+ 				            <input type="checkbox" class="checkbox" id="ch2"> 
+                        </td>
+                        <td>
+                            <div id="s2"></div>
+				            <p id="v2" class="values">50%</p>
+                        </td>
+
+                    </tr>
+
+				    <tr id="t3">
+                        <td class="tracknames">Alto flute</td>
+                        <td>
+ 				            <input type="checkbox" class="checkbox" id="ch3"> 
+                        </td>
+                        <td>
+                            <div id="s3"></div>
+				            <p id="v3" class="values">50%</p>
+                        </td>
+
+                    </tr>
+
+				    <tr id="t4">
+                        <td class="tracknames">Marimba</td>
+                        <td>
+ 				            <input type="checkbox" class="checkbox" id="ch4"> 
+                        </td>
+                        <td>
+                            <div id="s4"></div>
+				            <p id="v4" class="values">50%</p>
+                        </td>
+
+                    </tr>
+
+				    <tr id="t5">
+                        <td class="tracknames">Vibraphone</td>
+                        <td>
+ 				            <input type="checkbox" class="checkbox" id="ch5"> 
+                        </td>
+                        <td>
+                            <div id="s5"></div>
+				            <p id="v5" class="values">50%</p>
+                        </td>
+
+                    </tr>
+
+				    <tr id="t6">
+                        <td class="tracknames">Celesta</td>
+                        <td>
+ 				            <input type="checkbox" class="checkbox" id="ch6"> 
+                        </td>
+                        <td>
+                            <div id="s6"></div>
+				            <p id="v6" class="values">50%</p>
+                        </td>
+
+                    </tr>
+
+				    <tr id="t7">
+                        <td class="tracknames">Harp</td>
+                        <td>
+ 				            <input type="checkbox" class="checkbox" id="ch7"> 
+                        </td>
+                        <td>
+                            <div id="s7"></div>
+				            <p id="v7" class="values">50%</p>
+                        </td>
+
+                    </tr>
+
+				    <tr id="t8">
+                        <td class="tracknames">Piano 1a</td>
+                        <td>
+ 				            <input type="checkbox" class="checkbox" id="ch8"> 
+                        </td>
+                        <td>
+                            <div id="s8"></div>
+				            <p id="v8" class="values">50%</p>
+                        </td>
+
+                    </tr>
+
+				    <tr id="t9">
+                        <td class="tracknames">Piano 1b</td>
+                        <td>
+ 				            <input type="checkbox" class="checkbox" id="ch9"> 
+                        </td>
+                        <td>
+                            <div id="s9"></div>
+				            <p id="v9" class="values">50%</p>
+                        </td>
+
+                    </tr>
+
+				    <tr id="t10">
+                        <td class="tracknames">Piano 2a</td>
+                        <td>
+ 				            <input type="checkbox" class="checkbox" id="ch10"> 
+                        </td>
+                        <td>
+                            <div id="s10"></div>
+				            <p id="v10" class="values">50%</p>
+                        </td>
+
+                    </tr>
+
+				    <tr id="t11">
+                        <td class="tracknames">Piano 2b</td>
+                        <td>
+ 				            <input type="checkbox" class="checkbox" id="ch11"> 
+                        </td>
+                        <td>
+                            <div id="s11"></div>
+				            <p id="v11" class="values">50%</p>
+                        </td>
+
+                    </tr>
+
+				    <tr id="t12">
+                        <td class="tracknames">Timpani</td>
+                        <td>
+ 				            <input type="checkbox" class="checkbox" id="ch12"> 
+                        </td>
+                        <td>
+                            <div id="s12"></div>
+				            <p id="v12" class="values">50%</p>
+                        </td>
+
+                    </tr>
+                </table>
+
+			<!-- external script files, which have to go down here -->
+			
+			<!-- initialising variables and sliders -->
+			<script src="jQuery/GUIinit.js"></script>
+			
+			<!-- algorithm for determining the state of the play button -->
+			<script src="jQuery/GUIplayToggle.js"></script>
+			
+			<!-- the actual interactivity -->
+			<script src="jQuery/GUIinteractivity.js"></script>   
+			
+	</body>
+</html>

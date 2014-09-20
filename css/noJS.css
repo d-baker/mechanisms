@@ -1,0 +1,64 @@
+		/* making sure the <noscript> tag linking to this stylesheet doesn't show */
+		noscript {
+		display: none;
+		}
+		
+		/* link styling for the 'no JS' warning */
+		#JSwarning a, #JSwarning a:hover {
+		font-family: sans-serif;
+		text-shadow: none;
+		text-decoration: underline;
+		}
+		
+		/* general styling for the 'no JS' warning */
+		#JSwarning {
+		display: block;		
+		color: #fff;		
+		/* chose this BG color because it's attention-grabbing and also the complementary color of the blue used in my website */
+		background-color: #aa0000; 
+		line-height: 1.5em;
+		width: 100%;
+		text-align: center;
+		font-family: sans-serif;
+		padding: 5px 0px 5px 0px;
+		}
+		
+		
+		/* hiding elements that don't work without javascript, and references to those elements in my site content */
+		.conditional {
+		display: none !important;
+		}
+		
+		
+		/* styling to make things look better without javascript */
+		
+		.hptext {
+		padding-top: 45px;
+		}
+		
+		.mainnav li{
+		position: relative;
+		left: 100px;
+		bottom: 3px; 
+		}
+		
+		.logoheader {
+		position: relative;
+		right: 220px;
+		top: 3px;
+		}
+		
+		/* hiding interactivity cues that would cause confusion with javascript turned off */
+		
+		.bulletpoints p:not(.collapsygraph), .bulletpoints p:hover:not(.collapsygraph) {
+		text-shadow: none;
+		background-image: url('../images/arrow%20icons/iconList.png') !important;
+		cursor: default;
+		}
+		
+		.prototypeheading, .prototypeheading:hover {
+		background-image: none !important;
+		text-shadow: none;
+		cursor: default;
+		}
+		
