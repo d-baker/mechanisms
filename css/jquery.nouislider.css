@@ -62,13 +62,14 @@
  */
 .noUi-horizontal {
     height: 6px;
+    border-radius: 3px;
 }
 .noUi-horizontal .noUi-handle {
     width: 20px;
     height: 13px;
     left: -17px;
     top: -3px;
-    border-radius: 15%;
+    border-radius: 3px;
     cursor: pointer;
 }
 .noUi-vertical {

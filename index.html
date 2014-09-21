@@ -7,6 +7,7 @@
         <title>Multitrack audio project</title>
 
         <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="css/seekbar.css">
 
         <noscript> <link rel="stylesheet" type="text/css" href="css/noJS.css">
         </noscript>
@@ -28,13 +29,16 @@
         It appears that Javascript is disabled in your browser, meaning some aspects of this website will not display or function correctly. 
         <br> To learn how to enable Javascript, <a href="http://www.enable-javascript.com/"> click here </a>
         </noscript>
+            <div id="container">
 
                 <div class="play disabled"><button>play</button></div>
                 <div class="pause disabled"><button>pause</button></div>
 
-                <p id="negTimecode"></p>
-                <input type="range" step="any" value="0" id="seekbar">
-                <p id="timecode"></p>
+                <div id="seekbar-ctrls">
+                    <p id="negTimecode"></p>
+                    <input type="range" step="any" value="0" id="seekbar">
+                    <p id="timecode"></p>
+                </div>
 
                 <!-- TODO - checkall box -->
                 <form>
@@ -53,7 +57,7 @@
                         <th id="title">Track name</th>
                         <th id="onoff">On/off</th>
                         <th id="vol">Volume</th>
-                        <th id="percent">%</th>
+                        <th></th>
                     </tr>
 
                     <tr id="t1"> 
@@ -64,7 +68,7 @@
                         <td class="volume">
                             <div id="s1"></div>
                         </td>
-                        <td>
+                        <td class="percent">
                             <p id="v1" >50%</p>
                         </td>
                     </tr>
@@ -235,5 +239,6 @@
             <!-- the actual interactivity -->
             <script src="jQuery/GUIinteractivity.js"></script>   
 
+        </div>
     </body>
 </html>
