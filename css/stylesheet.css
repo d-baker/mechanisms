@@ -36,9 +36,14 @@ th {
     color: #1f7a7a;
 }
 .percent {
-    width: 22px;
+    width: 30px;
     padding-left: 10px;
 }
+
+.activetrack td.percent {
+    color: black;
+}
+
 .onoff {
     padding-left: 15px;
 }
