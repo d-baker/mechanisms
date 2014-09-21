@@ -17,6 +17,7 @@ input[type=range]::-moz-range-thumb {
     border-radius: 3px;
     background: #666;
     border: 1px solid #333;
+    cursor: pointer;
 }
 
 input[type=range]{    
