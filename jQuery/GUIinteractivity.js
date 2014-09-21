@@ -1,3 +1,18 @@
+    function pauseAudio() {
+        $(trk1).get(0).pause();
+        $(trk2).get(0).pause();
+        $(trk3).get(0).pause();
+        $(trk4).get(0).pause();
+        $(trk5).get(0).pause();
+        $(trk6).get(0).pause();
+        $(trk7).get(0).pause();
+        $(trk8).get(0).pause();
+        $(trk9).get(0).pause();
+        $(trk10).get(0).pause();
+        $(trk11).get(0).pause();
+        $(trk12).get(0).pause();
+    }
+
     $(window).load(function() {
         //allcheckboxes are unchecked by default
         $(".onoff input").prop("checked", false);
@@ -6,11 +21,11 @@
         //checkall box
         $("#chall").click(function() {
             if ($(this).prop("checked")) {
-                $("#ch1, #ch2, #ch3, #ch4, #ch5, #ch6, #ch7, #ch8, #ch9, #ch10, #ch11, #ch12").prop("checked", true);
+                $(".onoff input").prop("checked", true);
                 $(this).text("Uncheck all");
                 $("tr").addClass("activetrack");
             } else {
-                $("#ch1, #ch2, #ch3, #ch4, #ch5, #ch6, #ch7, #ch8, #ch9, #ch10, #ch11, #ch12").prop("checked", false);
+                $(".onoff input").prop("checked", false);
                 $(this).text("Check all");
                 $("tr").removeClass("activetrack");
             }
@@ -203,10 +218,11 @@
             }
 
 
-            //if any of thecheckboxes are changed after the play button has been clicked for the first time, audio starts playing again from the beginning automatically. I would rather this only happened when'play' is clicked, rather than automatically at the .change event.
+            //if any of the checkboxes are changed after the play button has been clicked for the first time, audio starts playing again from the beginning automatically. I would rather this only happened when'play' is clicked, rather than automatically at the .change event.
             $(".onoff input").change(function () {
 
                 //setting currentTime ensures the tracks all start at the same time rather than resuming in the middle if one was stopped halfway through
+                pauseAudio();
 
                 trk1.currentTime = 0;
                 trk2.currentTime = 0;
@@ -219,8 +235,8 @@
                 trk9.currentTime = 0;
                 trk10.currentTime = 0;
                 trk11.currentTime = 0;
-
                 trk12.currentTime = 0;
+
                 if ($("#ch1").prop("checked")) {
                     trk1.play();
                     $(".play").addClass("pause");
@@ -287,19 +303,8 @@
         });
 
         $(".pause").click(function() {
-            $(trk1).get(0).pause();
-            $(trk2).get(0).pause();
-            $(trk3).get(0).pause();
-            $(trk4).get(0).pause();
-            $(trk5).get(0).pause();
-            $(trk6).get(0).pause();
-            $(trk7).get(0).pause();
-            $(trk8).get(0).pause();
-            $(trk9).get(0).pause();
-            $(trk10).get(0).pause();
-            $(trk11).get(0).pause();
-            $(trk12).get(0).pause();
-        }); 
+            pauseAudio();
+        });
 
 
         //sliders are disabled by default, since allcheckboxes are unchecked by default on page load.
