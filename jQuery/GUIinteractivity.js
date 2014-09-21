@@ -29,9 +29,9 @@
     }
 
     $(window).load(function() {
-        //allcheckboxes are unchecked by default
-        $(".onoff input").prop("checked", false);
-        $("#chall").prop("checked", false);
+        //allcheckboxes are checked by default
+        $(".onoff input").prop("checked", true);
+        $("#chall").prop("checked", true);
 
         //checkall box
         $("#chall").click(function() {
