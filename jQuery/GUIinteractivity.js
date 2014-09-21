@@ -13,6 +13,21 @@
         $(trk12).get(0).pause();
     }
 
+    function resetAudio() {
+        trk1.currentTime = 0;
+        trk2.currentTime = 0;
+        trk3.currentTime = 0;
+        trk4.currentTime = 0;
+        trk5.currentTime = 0;
+        trk6.currentTime = 0;
+        trk7.currentTime = 0;
+        trk8.currentTime = 0;
+        trk9.currentTime = 0;
+        trk10.currentTime = 0;
+        trk11.currentTime = 0;
+        trk12.currentTime = 0;
+    }
+
     $(window).load(function() {
         //allcheckboxes are unchecked by default
         $(".onoff input").prop("checked", false);
@@ -28,6 +43,8 @@
                 $(".onoff input").prop("checked", false);
                 $(this).text("Check all");
                 $("tr").removeClass("activetrack");
+                pauseAudio();
+                resetAudio();
             }
         });
 
@@ -50,6 +67,8 @@
 
         // enabled or disabled CSS for tracknames - this has to be separate to the later instance of thecheckbox.change handler (inside the play.click function) as it needs to start working even before the play button is clicked.
         $(".onoff input").change(function () {
+            pauseAudio();
+            resetAudio();
 
             if ($("#ch1").prop("checked")) {
                 $("#t1").addClass("activetrack");
@@ -126,11 +145,7 @@
         });
 
         $(".play").click(function() {
-
-            // TODO add classes tocheckboxes, use an each loop to loop through audio els
-
-            // changing the play symbol to a pause symbol on click (applies appropriate CSS)
-            $(this).addClass("pause");
+            resetAudio();
 
             //plays appropriate audio file/s when play button is clicked
             if ($("#ch1").prop("checked")) {
@@ -217,25 +232,10 @@
                 trk12.play();
             }
 
-
-            //if any of the checkboxes are changed after the play button has been clicked for the first time, audio starts playing again from the beginning automatically. I would rather this only happened when'play' is clicked, rather than automatically at the .change event.
             $(".onoff input").change(function () {
 
-                //setting currentTime ensures the tracks all start at the same time rather than resuming in the middle if one was stopped halfway through
                 pauseAudio();
-
-                trk1.currentTime = 0;
-                trk2.currentTime = 0;
-                trk3.currentTime = 0;
-                trk4.currentTime = 0;
-                trk5.currentTime = 0;
-                trk6.currentTime = 0;
-                trk7.currentTime = 0;
-                trk8.currentTime = 0;
-                trk9.currentTime = 0;
-                trk10.currentTime = 0;
-                trk11.currentTime = 0;
-                trk12.currentTime = 0;
+                resetAudio();
 
                 if ($("#ch1").prop("checked")) {
                     trk1.play();
@@ -307,172 +307,10 @@
         });
 
 
-        //sliders are disabled by default, since allcheckboxes are unchecked by default on page load.
-        /*
-        $("#s1").attr("disabled", "disabled");
-        $("#s2").attr("disabled", "disabled");
-        $("#s3").attr("disabled", "disabled");
-        $("#s4").attr("disabled", "disabled");
-        $("#s5").attr("disabled", "disabled");
-        $("#s6").attr("disabled", "disabled");
-        $("#s7").attr("disabled", "disabled");
-        $("#s8").attr("disabled", "disabled");
-        $("#s9").attr("disabled", "disabled");
-        $("#s10").attr("disabled", "disabled");
-        $("#s11").attr("disabled", "disabled");
-        $("#s12").attr("disabled", "disabled");
-        */
-
-        //sliders get enabled if their corresponding checkbox is checked, and tracks get paused if their corresponding checkbox is unchecked while they're playing.
-        $(".onoff input").click(function() {
-            if ( $(this).prop("checked") ) {
-                $(this).parent("td").next("div").removeAttr("disabled");
-            } else {
-                $(this).parent("td").next("div").attr("disabled", "disabled");
-                //TODO how to find the audio el?
-            }
-        /*
-            if ($("#ch1").prop("checked")) {
-                $("#s1").removeAttr("disabled");
-            } else {
-                $("#s1").attr("disabled", "disabled");
-                $(trk1).get(0).pause();
-            }
-
-            if ($("#ch2").prop("checked")) {
-                $("#s2").removeAttr("disabled");
-            } else {
-                $("#s2").attr("disabled", "disabled");
-                $(trk2).get(0).pause();
-            }
-
-            if ($("#ch3").prop("checked")) {
-                $("#s3").removeAttr("disabled");
-            } else {
-                $("#s3").attr("disabled", "disabled");
-                $(trk3).get(0).pause();
-            }
-
-            if ($("#ch4").prop("checked")) {
-                $("#s4").removeAttr("disabled");
-            } else {
-                $("#s4").attr("disabled", "disabled");
-                $(trk4).get(0).pause();
-            }
-
-            if ($("#ch5").prop("checked")) {
-                $("#s5").removeAttr("disabled");
-            } else {
-                $("#s5").attr("disabled", "disabled");
-                $(trk5).get(0).pause();
-            }
-
-            if ($("#ch6").prop("checked")) {
-                $("#s6").removeAttr("disabled");
-            } else {
-                $("#s6").attr("disabled", "disabled");
-                $(trk6).get(0).pause();
-            }
-
-            if ($("#ch7").prop("checked")) {
-                $("#s7").removeAttr("disabled");
-            } else {
-                $("#s7").attr("disabled", "disabled");
-                $(trk7).get(0).pause();
-            }
-
-            if ($("#ch8").prop("checked")) {
-                $("#s8").removeAttr("disabled");
-            } else {
-                $("#s8").attr("disabled", "disabled");
-                $(trk8).get(0).pause();
-            }
-
-            if ($("#ch9").prop("checked")) {
-                $("#s9").removeAttr("disabled");
-            } else {
-                $("#s9").attr("disabled", "disabled");
-                $(trk9).get(0).pause();
-            }
-
-            if ($("#ch10").prop("checked")) {
-                $("#s10").removeAttr("disabled");
-            } else {
-                $("#s10").attr("disabled", "disabled");
-                $(trk10).get(0).pause();
-            }
-
-            if ($("#ch11").prop("checked")) {
-                $("#s11").removeAttr("disabled");
-            } else {
-                $("#s11").attr("disabled", "disabled");
-                $(trk11).get(0).pause();
-            }
-
-            if ($("#ch12").prop("checked")) {
-                $("#s12").removeAttr("disabled");
-            } else {
-                $("#s12").attr("disabled", "disabled");
-                $(trk12).get(0).pause();
-            }
-*/
-        });
-
-        /* resets pause symbol to a play symbol when all the audio has finished playing (requires that all tracks are the same length)
-        source: 
-        Emmanuel N. 2011. Post in thread “How to find audio is paused”. stackoverflow.com.  http://stackoverflow.com/questions/7652031/how-to-find-audio-is-paused-or-track-finished-in-jquery-html5-audio
-        */
-        $(trk1).bind("ended", function(){ 
-            $(".play").removeClass("pause");
-        });
-
-        $(trk2).bind("ended", function(){ 
-            $(".play").removeClass("pause");
-        }); 
-
-        $(trk3).bind("ended", function(){ 
-           $(".play").removeClass("pause");
-        }); 
-
-        $(trk4).bind("ended", function(){ 
-            $(".play").removeClass("pause");
-        }); 
-
-        $(trk5).bind("ended", function(){ 
-            $(".play").removeClass("pause");
-        });
-
-        $(trk6).bind("ended", function(){ 
-            $(".play").removeClass("pause");
-        });
-
-        $(trk7).bind("ended", function(){ 
-            $(".play").removeClass("pause");
-        });
-
-        $(trk8).bind("ended", function(){ 
-            $(".play").removeClass("pause");
-        });
-
-        $(trk9).bind("ended", function(){ 
-            $(".play").removeClass("pause");
-        });
-
-        $(trk10).bind("ended", function(){ 
-            $(".play").removeClass("pause");
-        });
-
-        $(trk11).bind("ended", function(){ 
-            $(".play").removeClass("pause");
-        });
-
-        $(trk12).bind("ended", function(){ 
-            $(".play").removeClass("pause");
-        });
-
 
         //TIMECODES
 
+        // TODO no idea why I'm copying all these
         var audio1 = trk1
         var audio2 = trk2
         var audio3 = trk3

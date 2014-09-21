@@ -61,14 +61,15 @@
 /* Slider size and handle placement;
  */
 .noUi-horizontal {
-    height: 8px;
+    height: 6px;
 }
 .noUi-horizontal .noUi-handle {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 13px;
     left: -17px;
-    top: -4px;
-    border-radius: 100%;
+    top: -3px;
+    border-radius: 15%;
+    cursor: pointer;
 }
 .noUi-vertical {
     width: 18px;
