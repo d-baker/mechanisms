@@ -39,6 +39,8 @@
                 $(".onoff input").prop("checked", true);
                 $(this).text("Uncheck all");
                 $("tr").addClass("activetrack");
+                pauseAudio();
+                resetAudio();
             } else {
                 $(".onoff input").prop("checked", false);
                 $(this).text("Check all");

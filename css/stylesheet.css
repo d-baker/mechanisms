@@ -13,6 +13,10 @@ body {
 
 table {
     border-spacing: 0;
+    background: #ccc;
+    border: 1px solid #333;
+    border-radius: 3px;
+    color: #666;
 }
 
 th {
@@ -20,19 +24,23 @@ th {
     background: #666;
     color: #fff;
 }
-td.trackname {
+
+.activetrack {
+    background: #fff;
+}
+
+.trackname {
     width: 100px;
 }
-td.percent {
+.activetrack td.trackname {
+    color: #1f7a7a;
+}
+.percent {
     width: 22px;
     padding-left: 10px;
 }
-td.onoff {
+.onoff {
     padding-left: 15px;
-}
-
-.activetrack td.trackname {
-    color: green;
 }
 
 .volume {
