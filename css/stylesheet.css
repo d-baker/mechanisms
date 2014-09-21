@@ -1,1 +1,24 @@
+body {
+    margin: auto;
+    font-family: "Source Code Pro";
+}
+
+table, tr, td, th {
+    border: 1px solid grey;
+}
+
+.activetrack td.trackname {
+    color: green;
+}
+
+.volume {
+    width: 500px;
+}
+
+button, .play, .pause, p#timecode, p#negTimecode, p.chall {
+    display: inline-block;
+}
+form {
+    position: relative;
+}
 

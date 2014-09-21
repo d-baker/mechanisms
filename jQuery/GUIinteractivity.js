@@ -1,15 +1,18 @@
     $(window).load(function() {
-        //all checkboxes are unchecked by default
-        $(".checkbox").prop("checked", false);
+        //allcheckboxes are unchecked by default
+        $(".onoff input").prop("checked", false);
+        $("#chall").prop("checked", false);
 
         //checkall box
         $("#chall").click(function() {
             if ($(this).prop("checked")) {
                 $("#ch1, #ch2, #ch3, #ch4, #ch5, #ch6, #ch7, #ch8, #ch9, #ch10, #ch11, #ch12").prop("checked", true);
                 $(this).text("Uncheck all");
+                $("tr").addClass("activetrack");
             } else {
                 $("#ch1, #ch2, #ch3, #ch4, #ch5, #ch6, #ch7, #ch8, #ch9, #ch10, #ch11, #ch12").prop("checked", false);
                 $(this).text("Check all");
+                $("tr").removeClass("activetrack");
             }
         });
 
@@ -30,8 +33,8 @@
             }
         });
 
-        // enabled or disabled CSS for tracknames - this has to be separate to the later instance of the checkbox.change handler (inside the play.click function) as it needs to start working even before the play button is clicked.
-        $(".checkbox").change(function () {
+        // enabled or disabled CSS for tracknames - this has to be separate to the later instance of thecheckbox.change handler (inside the play.click function) as it needs to start working even before the play button is clicked.
+        $(".onoff input").change(function () {
 
             if ($("#ch1").prop("checked")) {
                 $("#t1").addClass("activetrack");
@@ -109,7 +112,7 @@
 
         $(".play").click(function() {
 
-            // TODO add classes to checkboxes, use an each loop to loop through audio els
+            // TODO add classes tocheckboxes, use an each loop to loop through audio els
 
             // changing the play symbol to a pause symbol on click (applies appropriate CSS)
             $(this).addClass("pause");
@@ -200,8 +203,8 @@
             }
 
 
-            //if any of the checkboxes are changed after the play button has been clicked for the first time, audio starts playing again from the beginning automatically. I would rather this only happened when'play' is clicked, rather than automatically at the .change event.
-            $(".checkbox").change(function () {
+            //if any of thecheckboxes are changed after the play button has been clicked for the first time, audio starts playing again from the beginning automatically. I would rather this only happened when'play' is clicked, rather than automatically at the .change event.
+            $(".onoff input").change(function () {
 
                 //setting currentTime ensures the tracks all start at the same time rather than resuming in the middle if one was stopped halfway through
 
@@ -299,7 +302,8 @@
         }); 
 
 
-        //sliders are disabled by default, since all checkboxes are unchecked by default on page load.
+        //sliders are disabled by default, since allcheckboxes are unchecked by default on page load.
+        /*
         $("#s1").attr("disabled", "disabled");
         $("#s2").attr("disabled", "disabled");
         $("#s3").attr("disabled", "disabled");
@@ -312,10 +316,17 @@
         $("#s10").attr("disabled", "disabled");
         $("#s11").attr("disabled", "disabled");
         $("#s12").attr("disabled", "disabled");
+        */
 
         //sliders get enabled if their corresponding checkbox is checked, and tracks get paused if their corresponding checkbox is unchecked while they're playing.
-        $(".checkbox").click(function() {
-
+        $(".onoff input").click(function() {
+            if ( $(this).prop("checked") ) {
+                $(this).parent("td").next("div").removeAttr("disabled");
+            } else {
+                $(this).parent("td").next("div").attr("disabled", "disabled");
+                //TODO how to find the audio el?
+            }
+        /*
             if ($("#ch1").prop("checked")) {
                 $("#s1").removeAttr("disabled");
             } else {
@@ -399,7 +410,7 @@
                 $("#s12").attr("disabled", "disabled");
                 $(trk12).get(0).pause();
             }
-
+*/
         });
 
         /* resets pause symbol to a play symbol when all the audio has finished playing (requires that all tracks are the same length)
@@ -472,10 +483,10 @@
 
         //setting the timecodes
         audio1.addEventListener("loadeddata", function () {
-            $("#timecode").text("0 : 00");
+            $("#timecode").text("0:00");
             durMin=Math.floor(audio1.duration/60)
             secMin=Math.floor(audio1.duration%60)
-            $("#negTimecode").text("- " + durMin + " : " + secMin);
+            $("#negTimecode").text("-" + durMin + ":" + secMin);
         });
 
         var seekbar = document.getElementById('seekbar');
@@ -535,18 +546,18 @@
 
             if (timecode > 59) {
                 if (rem <10) {
-                    $("#timecode").text(Math.floor(timecode/60) + " : 0" + rem);
+                    $("#timecode").text(Math.floor(timecode/60) + ":0" + rem);
                 } else {
-                    $("#timecode").text(Math.floor(timecode/60) + " : " + rem);
+                    $("#timecode").text(Math.floor(timecode/60) + ":" + rem);
                 }
             } 
 
             if (timecode >9 && timecode <60) {
-                $("#timecode").text("0 : " + timecode);
+                $("#timecode").text("0:" + timecode);
             } 
 
             if (timecode <10) {
-                $("#timecode").text("0 : 0" + timecode);
+                $("#timecode").text("0:0" + timecode);
             } 
 
 
@@ -556,18 +567,18 @@
 
             if (timecode > 59) {
                 if (negRem <10) {
-                    $("#negTimecode").text("- " + Math.floor((seekbar.max/60) - (timecode/60)) + " : 0" + negRem);
+                    $("#negTimecode").text("-" + Math.floor((seekbar.max/60) - (timecode/60)) + ":0" + negRem);
                 } else {
-                    $("#negTimecode").text("- " + Math.floor((seekbar.max/60) - (timecode/60))  + " : " + negRem);
+                    $("#negTimecode").text("-" + Math.floor((seekbar.max/60) - (timecode/60))  + ":" + negRem);
                 }
             } 
 
             if (negRem >9 && negRem <60) {
-                $("#negTimecode").text("- " + Math.floor((seekbar.max/60) - (timecode/60)) + " : " + negRem);
+                $("#negTimecode").text("-" + Math.floor((seekbar.max/60) - (timecode/60)) + ":" + negRem);
             } 
 
             if (negRem <10) {
-                $("#negTimecode").text("- " + Math.floor((seekbar.max/60) - (timecode/60)) + " : 0" + negRem);
+                $("#negTimecode").text("-" + Math.floor((seekbar.max/60) - (timecode/60)) + ":0" + negRem);
             } 
 
 

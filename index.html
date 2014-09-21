@@ -11,6 +11,8 @@
         <noscript> <link rel="stylesheet" type="text/css" href="css/noJS.css">
         </noscript>
 
+        <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,300,200,500,600,900,700' rel='stylesheet' type='text/css'>
+
         <script src="jQuery/jquery-1.10.2.min.js">
         </script>
 
@@ -30,16 +32,20 @@
                 <div class="play disabled"><button>play</button></div>
                 <div class="pause disabled"><button>pause</button></div>
 
+                <p id="negTimecode"></p>
                 <input type="range" step="any" value="0" id="seekbar">
                 <p id="timecode"></p>
-                <p id="negTimecode"></p>
 
                 <!-- TODO - checkall box -->
-                <p class="chall">Check all</p>
-                <input type="checkbox" class="checkbox" id="chall"> 
+                <form>
+                    <p class="chall">Check all</p>
+                    <input type="checkbox" id="chall"> 
+                </form>
 
+                <!--
                 <p class="mall">Mute all</p>
-                <input type="checkbox" class="checkbox" id="mall"> 
+                <input type="checkbox"  id="mall"> 
+                -->
 
 
                 <table>
@@ -50,144 +56,144 @@
                     </tr>
 
                     <tr id="t1"> 
-                        <td class="tracknames">Piccollo</td>
-                        <td>
-                            <input type="checkbox" class="checkbox" id="ch1"> 
+                        <td class="trackname">Piccollo</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch1"> 
                         </td>
-                        <td>
+                        <td class="volume">
                             <div id="s1"></div>
-                            <p id="v1" class="values">50%</p>
+                            <p id="v1" >50%</p>
                         </td>
                     </tr>
 
                     <tr id="t2">
-                        <td class="tracknames">Flute</td>
-                        <td>
-                            <input type="checkbox" class="checkbox" id="ch2"> 
+                        <td class="trackname">Flute</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch2"> 
                         </td>
-                        <td>
+                        <td class="volume">
                             <div id="s2"></div>
-                            <p id="v2" class="values">50%</p>
+                            <p id="v2" >50%</p>
                         </td>
 
                     </tr>
 
                     <tr id="t3">
-                        <td class="tracknames">Alto flute</td>
-                        <td>
-                            <input type="checkbox" class="checkbox" id="ch3"> 
+                        <td class="trackname">Alto flute</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch3"> 
                         </td>
-                        <td>
+                        <td class="volume">
                             <div id="s3"></div>
-                            <p id="v3" class="values">50%</p>
+                            <p id="v3" >50%</p>
                         </td>
 
                     </tr>
 
                     <tr id="t4">
-                        <td class="tracknames">Marimba</td>
-                        <td>
-                            <input type="checkbox" class="checkbox" id="ch4"> 
+                        <td class="trackname">Marimba</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch4"> 
                         </td>
-                        <td>
+                        <td class="volume">
                             <div id="s4"></div>
-                            <p id="v4" class="values">50%</p>
+                            <p id="v4" >50%</p>
                         </td>
 
                     </tr>
 
                     <tr id="t5">
-                        <td class="tracknames">Vibraphone</td>
-                        <td>
-                            <input type="checkbox" class="checkbox" id="ch5"> 
+                        <td class="trackname">Vibraphone</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch5"> 
                         </td>
-                        <td>
+                        <td class="volume">
                             <div id="s5"></div>
-                            <p id="v5" class="values">50%</p>
+                            <p id="v5" >50%</p>
                         </td>
 
                     </tr>
 
                     <tr id="t6">
-                        <td class="tracknames">Celesta</td>
-                        <td>
-                            <input type="checkbox" class="checkbox" id="ch6"> 
+                        <td class="trackname">Celesta</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch6"> 
                         </td>
-                        <td>
+                        <td class="volume">
                             <div id="s6"></div>
-                            <p id="v6" class="values">50%</p>
+                            <p id="v6" >50%</p>
                         </td>
 
                     </tr>
 
                     <tr id="t7">
-                        <td class="tracknames">Harp</td>
-                        <td>
-                            <input type="checkbox" class="checkbox" id="ch7"> 
+                        <td class="trackname">Harp</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch7"> 
                         </td>
-                        <td>
+                        <td class="volume">
                             <div id="s7"></div>
-                            <p id="v7" class="values">50%</p>
+                            <p id="v7" >50%</p>
                         </td>
 
                     </tr>
 
                     <tr id="t8">
-                        <td class="tracknames">Piano 1a</td>
-                        <td>
-                            <input type="checkbox" class="checkbox" id="ch8"> 
+                        <td class="trackname">Piano 1a</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch8"> 
                         </td>
-                        <td>
+                        <td class="volume">
                             <div id="s8"></div>
-                            <p id="v8" class="values">50%</p>
+                            <p id="v8" >50%</p>
                         </td>
 
                     </tr>
 
                     <tr id="t9">
-                        <td class="tracknames">Piano 1b</td>
-                        <td>
-                            <input type="checkbox" class="checkbox" id="ch9"> 
+                        <td class="trackname">Piano 1b</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch9"> 
                         </td>
-                        <td>
+                        <td class="volume">
                             <div id="s9"></div>
-                            <p id="v9" class="values">50%</p>
+                            <p id="v9" >50%</p>
                         </td>
 
                     </tr>
 
                     <tr id="t10">
-                        <td class="tracknames">Piano 2a</td>
-                        <td>
-                            <input type="checkbox" class="checkbox" id="ch10"> 
+                        <td class="trackname">Piano 2a</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch10"> 
                         </td>
-                        <td>
+                        <td class="volume">
                             <div id="s10"></div>
-                            <p id="v10" class="values">50%</p>
+                            <p id="v10" >50%</p>
                         </td>
 
                     </tr>
 
                     <tr id="t11">
-                        <td class="tracknames">Piano 2b</td>
-                        <td>
-                            <input type="checkbox" class="checkbox" id="ch11"> 
+                        <td class="trackname">Piano 2b</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch11"> 
                         </td>
-                        <td>
+                        <td class="volume">
                             <div id="s11"></div>
-                            <p id="v11" class="values">50%</p>
+                            <p id="v11" >50%</p>
                         </td>
 
                     </tr>
 
                     <tr id="t12">
-                        <td class="tracknames">Timpani</td>
-                        <td>
-                            <input type="checkbox" class="checkbox" id="ch12"> 
+                        <td class="trackname">Timpani</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch12"> 
                         </td>
-                        <td>
+                        <td class="volume">
                             <div id="s12"></div>
-                            <p id="v12" class="values">50%</p>
+                            <p id="v12" >50%</p>
                         </td>
 
                     </tr>
