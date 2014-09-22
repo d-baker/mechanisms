@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta charset="UTF-8" />
+        <title>Mechanism #2</title>
+
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="css/seekbar.css">
+
+        <noscript> <link rel="stylesheet" type="text/css" href="css/noJS.css">
+        </noscript>
+
+        <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,300,200,500,600,900,700' rel='stylesheet' type='text/css'>
+
+        <script src="jQuery/jquery-1.10.2.min.js">
+        </script>
+
+        <!-- slider -->
+        <script src="jQuery/jquery.nouislider.min.js"></script>
+        <link href="css/jquery.nouislider.css" type="text/css" rel="stylesheet">    
+
+    </head>
+
+    <body>
+
+        <noscript id="JSwarning">
+        It appears that Javascript is disabled in your browser, meaning some aspects of this website will not display or function correctly. 
+        <br> To learn how to enable Javascript, <a href="http://www.enable-javascript.com/"> click here </a>
+        </noscript>
+            <div id="container">
+
+                <div class="play disabled"><button>play</button></div>
+                <div class="pause disabled"><button>pause</button></div>
+
+                <div id="seekbar-ctrls">
+                    <p id="negTimecode"></p>
+                    <input type="range" step="any" value="0" id="seekbar">
+                    <p id="timecode"></p>
+                </div>
+
+                <!-- TODO - checkall box -->
+                <form>
+                    <p class="chall">check all</p>
+                    <input type="checkbox" id="chall"> 
+                </form>
+
+                <!--
+                <p class="mall">Mute all</p>
+                <input type="checkbox"  id="mall"> 
+                -->
+
+
+                <table>
+                    <tr>
+                        <th id="title">track name</th>
+                        <th id="onoff">on/off</th>
+                        <th id="vol">volume</th>
+                        <th></th>
+                    </tr>
+
+                    <tr id="t1" class="activetrack"> 
+                        <td class="trackname">piccollo</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch1"> 
+                        </td>
+                        <td class="volume">
+                            <div id="s1"></div>
+                        </td>
+                        <td class="percent">
+                            <p id="v1" >50%</p>
+                        </td>
+                    </tr>
+
+                    <tr id="t2" class="activetrack">
+                        <td class="trackname">flute</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch2"> 
+                        </td>
+                        <td class="volume">
+                            <div id="s2"></div>
+                        </td>
+                        <td class="percent">
+                            <p id="v2" >50%</p>
+                        </td>
+
+                    </tr>
+
+                    <tr id="t3" class="activetrack">
+                        <td class="trackname">alto flute</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch3"> 
+                        </td>
+                        <td class="volume">
+                            <div id="s3"></div>
+                        </td>
+                        <td class="percent">
+                            <p id="v3" >50%</p>
+                        </td>
+
+                    </tr>
+
+                    <tr id="t4" class="activetrack">
+                        <td class="trackname">marimba</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch4"> 
+                        </td>
+                        <td class="volume">
+                            <div id="s4"></div>
+                        </td>
+                        <td class="percent">
+                            <p id="v4" >50%</p>
+                        </td>
+
+                    </tr>
+
+                    <tr id="t5" class="activetrack">
+                        <td class="trackname">vibraphone</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch5"> 
+                        </td>
+                        <td class="volume">
+                            <div id="s5"></div>
+                        </td>
+                        <td class="percent">
+                            <p id="v5" >50%</p>
+                        </td>
+
+                    </tr>
+
+                    <tr id="t6" class="activetrack">
+                        <td class="trackname">celesta</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch6"> 
+                        </td>
+                        <td class="volume">
+                            <div id="s6"></div>
+                        </td>
+                        <td class="percent">
+                            <p id="v6" >50%</p>
+                        </td>
+
+                    </tr>
+
+                    <tr id="t7" class="activetrack">
+                        <td class="trackname">harp</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch7"> 
+                        </td>
+                        <td class="volume">
+                            <div id="s7"></div>
+                        </td>
+                        <td class="percent">
+                            <p id="v7" >50%</p>
+                        </td>
+
+                    </tr>
+
+                    <tr id="t8" class="activetrack">
+                        <td class="trackname">piano 1a</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch8"> 
+                        </td>
+                        <td class="volume">
+                            <div id="s8"></div>
+                        </td>
+                        <td class="percent">
+                            <p id="v8" >50%</p>
+                        </td>
+
+                    </tr>
+
+                    <tr id="t9" class="activetrack">
+                        <td class="trackname">piano 1b</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch9"> 
+                        </td>
+                        <td class="volume">
+                            <div id="s9"></div>
+                         </td>
+                        <td class="percent">
+                            <p id="v9" >50%</p>
+                        </td>
+
+                    </tr>
+
+                    <tr id="t10" class="activetrack">
+                        <td class="trackname">piano 2a</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch10"> 
+                        </td>
+                        <td class="volume">
+                            <div id="s10"></div>
+                        </td>
+                        <td class="percent">
+                            <p id="v10" >50%</p>
+                        </td>
+
+                    </tr>
+
+                    <tr id="t11" class="activetrack">
+                        <td class="trackname">piano 2b</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch11"> 
+                        </td>
+                        <td class="volume">
+                            <div id="s11"></div>
+                        </td>
+                        <td class="percent">
+                            <p id="v11" >50%</p>
+                        </td>
+
+                    </tr>
+
+                    <tr id="t12" class="activetrack">
+                        <td class="trackname">timpani</td>
+                        <td class="onoff">
+                            <input type="checkbox"  id="ch12"> 
+                        </td>
+                        <td class="volume">
+                            <div id="s12"></div>
+                        </td>
+                        <td class="percent">
+                            <p id="v12" >50%</p>
+                        </td>
+
+                    </tr>
+                </table>
+
+            <!-- external script files, which have to go down here -->
+
+            <!-- initialising variables and sliders -->
+            <script src="jQuery/GUIinit2.js"></script>
+
+            <!-- algorithm for determining the state of the play button -->
+            <script src="jQuery/GUIplayToggle.js"></script>
+
+            <!-- the actual interactivity -->
+            <script src="jQuery/GUIinteractivity.js"></script>   
+
+        </div>
+    </body>
+</html>

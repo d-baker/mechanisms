@@ -147,8 +147,6 @@
         });
 
         $(".play").click(function() {
-            resetAudio();
-
             //plays appropriate audio file/s when play button is clicked
             if ($("#ch1").prop("checked")) {
                 if (! $("#mall").prop("checked")) {
@@ -236,67 +234,65 @@
 
             $(".onoff input").change(function () {
 
-                pauseAudio();
-                resetAudio();
+                trk1.currentTime = $("#seekbar").val();
+                trk2.currentTime = $("#seekbar").val();
+                trk3.currentTime = $("#seekbar").val();
+                trk4.currentTime = $("#seekbar").val();
+                trk5.currentTime = $("#seekbar").val();
+                trk6.currentTime = $("#seekbar").val();
+                trk7.currentTime = $("#seekbar").val();
+                trk8.currentTime = $("#seekbar").val();
+                trk9.currentTime = $("#seekbar").val();
+                trk10.currentTime = $("#seekbar").val();
+                trk11.currentTime = $("#seekbar").val();
+                trk12.currentTime = $("#seekbar").val();
 
                 if ($("#ch1").prop("checked")) {
                     trk1.play();
-                    $(".play").addClass("pause");
                 } 
 
                 if ($("#ch2").prop("checked")) {
                     trk2.play();
-                    $(".play").addClass("pause");
                 }
 
                 if ($("#ch3").prop("checked")) {
                     trk3.play();
-                    $(".play").addClass("pause");
                 }
 
                 if ($("#ch4").prop("checked")) {
                     trk4.play();
-                    $(".play").addClass("pause");
                 }
 
                 if ($("#ch5").prop("checked")) {
                     trk5.play();
-                    $(".play").addClass("pause");
                 }
 
                 if ($("#ch6").prop("checked")) {
                     trk6.play();
-                    $(".play").addClass("pause");
                 }
 
                 if ($("#ch7").prop("checked")) {
                     trk7.play();
-                    $(".play").addClass("pause");
                 }
 
                 if ($("#ch8").prop("checked")) {
                     trk8.play();
-                    $(".play").addClass("pause");
                 }
 
                 if ($("#ch9").prop("checked")) {
                     trk9.play();
-                    $(".play").addClass("pause");
                 }
 
                 if ($("#ch10").prop("checked")) {
                     trk10.play();
-                    $(".play").addClass("pause");
                 }
 
                 if ($("#ch11").prop("checked")) {
                     trk11.play();
-                    $(".play").addClass("pause");
                 }
 
                 if ($("#ch12").prop("checked")) {
                     trk12.play();
-                    $(".play").addClass("pause");
                 }
 
             });
@@ -307,7 +303,6 @@
         $(".pause").click(function() {
             pauseAudio();
         });
-
 
 
         //TIMECODES
