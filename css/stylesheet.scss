@@ -1,7 +1,18 @@
+
+$fg: #131313;
+$bg: #eee;
+$highlight: #1f7a7a;
+$comment: #888;
+$header-height: 60px;
+
+@import "seekbar";
+@import "jquery.nouislider";
+
 body {
     margin: auto;
     font-family: "Source Code Pro";
     font-size: 12px;
+	background: #eee;
 }
 
 #container {
@@ -18,15 +29,14 @@ audio {
 table {
     border-spacing: 0;
     background: #ccc;
-    border: 1px solid #333;
+    border: 1px solid $comment;
     border-radius: 3px;
-    color: #666;
 }
 
 th {
     padding: 10px;
-    background: #666;
-    color: #fff;
+    background: $bg; 
+    color: $fg;
 }
 
 .activetrack {
@@ -65,12 +75,13 @@ form {
 }
 
 .play {
-    border: 1px solid #333;
+    border: 1px solid $comment + #222;
     border-radius: 3px;
-    background: #666;
-    color: #fff;
-    cursor: hover;
+    background: white;
+    color: $fg;
+    cursor: pointer;
     font-family: "Source Code Pro";
+	font-size: 12px;
 }
 
 #seekbar {

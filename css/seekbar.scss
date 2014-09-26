@@ -6,7 +6,7 @@ input[type=range]{
 input[type=range]::-moz-range-track {
     width: 300px;
     height: 5px;
-    background: #3f3f3f;
+    background: white;
     border-radius: 3px;
 }
 
@@ -15,8 +15,8 @@ input[type=range]::-moz-range-thumb {
     height: 13px;
     width: 20px;
     border-radius: 3px;
-    background: #666;
-    border: 1px solid #333;
+    background: white;
+    border: 1px solid $comment + #222;
     cursor: pointer;
 }
 
@@ -27,9 +27,10 @@ input[type=range]{
 input[type=range]::-webkit-slider-runnable-track {
     width: 300px;
     height: 5px;
-    background: #3f3f3f;
+    background: white;
     border: none;
     border-radius: 3px;
+    border: 1px solid $comment + #222;
 }
 
 input[type=range]::-webkit-slider-thumb {
@@ -38,8 +39,8 @@ input[type=range]::-webkit-slider-thumb {
     height: 13px;
     width: 20px;
     border-radius: 3px;
-    background: #666;
-    border: 1px solid #333;
+    background: white;
+    border: 1px solid $comment + #222;
     margin-top: -4px;
 }
 input[type=range]:focus {
