@@ -4,39 +4,51 @@
 
         trk1 = document.createElement("audio");
         trk1.setAttribute("src", "audio/Mechanism-1/Piano-a.ogg");
+		trk1.volume = 0.5;
 
         trk2 = document.createElement("audio");
         trk2.setAttribute("src", "audio/Mechanism-1/Piano-b.ogg");
+		trk2.volume = 0.5;
 
         trk3 = document.createElement("audio");
         trk3.setAttribute("src", "audio/Mechanism-1/Celesta-a.ogg");
+		trk3.volume = 0.5;
 
         trk4 = document.createElement("audio");
         trk4.setAttribute("src", "audio/Mechanism-1/Celesta-b.ogg");
+		trk4.volume = 0.5;
 
         trk5 = document.createElement("audio");
         trk5.setAttribute("src", "audio/Mechanism-1/Marimba1.ogg"); 
+		trk5.volume = 0.5;
 
         trk6 = document.createElement("audio");
         trk6.setAttribute("src", "audio/Mechanism-1/Marimba2.ogg");    
+		trk6.volume = 0.5;
 
         trk7 = document.createElement("audio");
-        trk7.setAttribute("src", "audio/Mechanism-1/Harp1.ogg"); 
+        trk7.setAttribute("src", "audio/Mechanism-1/Harp1.ogg");
+		trk7.volume = 0.5; 
 
         trk8 = document.createElement("audio");
-        trk8.setAttribute("src", "audio/Mechanism-1/Harp2.ogg");    
+        trk8.setAttribute("src", "audio/Mechanism-1/Harp2.ogg");
+		trk8.volume = 0.5;
 
         trk9 = document.createElement("audio");
         trk9.setAttribute("src", "audio/Mechanism-1/Vibraphone.ogg");  
+		trk9.volume = 0.5;
 
         trk10 = document.createElement("audio");
         trk10.setAttribute("src", "audio/Mechanism-1/Timpani.ogg");  
+		trk10.volume = 0.5;
 
         trk11 = document.createElement("audio");
         trk11.setAttribute("src", "audio/Mechanism-1/Snare-drum.ogg"); 
+		trk11.volume = 0.5;
 
         trk12 = document.createElement("audio");
         trk12.setAttribute("src", "audio/Mechanism-1/Drumkit.ogg"); 
+		trk12.volume = 0.5;
 
 // creates the sliders, outputs the slider value to a <p> element and sets audio volume accordingly  
 
