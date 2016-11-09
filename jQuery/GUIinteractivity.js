@@ -26,18 +26,18 @@ function anyChecked() {
 }
 
 function pauseAudio() {
-    $(trk1).get(0).pause();
-    $(trk2).get(0).pause();
-    $(trk3).get(0).pause();
-    $(trk4).get(0).pause();
-    $(trk5).get(0).pause();
-    $(trk6).get(0).pause();
-    $(trk7).get(0).pause();
-    $(trk8).get(0).pause();
-    $(trk9).get(0).pause();
-    $(trk10).get(0).pause();
-    $(trk11).get(0).pause();
-    $(trk12).get(0).pause();
+    trk1.pause();
+    trk2.pause();
+    trk3.pause();
+    trk4.pause();
+    trk5.pause();
+    trk6.pause();
+    trk7.pause();
+    trk8.pause();
+    trk9.pause();
+    trk10.pause();
+    trk11.pause();
+    trk12.pause();
 }
 
 function resetAudio() {
@@ -171,6 +171,7 @@ $(window).load(function() {
     $(".play").click(function() {
         //plays appropriate audio file/s when play button is clicked
         var playbutton = $(this);
+        var seekbar = document.getElementById('seekbar');
 
         if (anyPlaying()) {
             playbutton.removeClass("playing");
@@ -180,7 +181,18 @@ $(window).load(function() {
             playbutton.addClass("playing");
             playbutton.html("pause");
 
-            $("audio").currentTime = $("#seekbar").val();
+            trk1.currentTime = seekbar.value;
+            trk2.currentTime = seekbar.value;
+            trk3.currentTime = seekbar.value;
+            trk4.currentTime = seekbar.value;
+            trk5.currentTime = seekbar.value;
+            trk6.currentTime = seekbar.value;
+            trk7.currentTime = seekbar.value;
+            trk8.currentTime = seekbar.value;
+            trk9.currentTime = seekbar.value;
+            trk10.currentTime = seekbar.value;
+            trk11.currentTime = seekbar.value;
+            trk12.currentTime = seekbar.value;
 
             if ($("#ch1").prop("checked")) {
                 trk1.play();
@@ -241,7 +253,18 @@ $(window).load(function() {
                 playbutton.html("play");               
             }
 
-            $("audio").currentTime = $("#seekbar").val();
+            trk1.currentTime = seekbar.value;
+            trk2.currentTime = seekbar.value;
+            trk3.currentTime = seekbar.value;
+            trk4.currentTime = seekbar.value;
+            trk5.currentTime = seekbar.value;
+            trk6.currentTime = seekbar.value;
+            trk7.currentTime = seekbar.value;
+            trk8.currentTime = seekbar.value;
+            trk9.currentTime = seekbar.value;
+            trk10.currentTime = seekbar.value;
+            trk11.currentTime = seekbar.value;
+            trk12.currentTime = seekbar.value;
 
             if ($("#ch1").prop("checked")) {
                 trk1.play();
