@@ -231,6 +231,13 @@ $(window).load(function() {
         }
 
         $(".onoff input").change(function () {
+            if (anyChecked()) {
+                playbutton.addClass("playing");
+                playbutton.html("pause");
+            } else {
+                playbutton.removeClass("playing");
+                playbutton.html("play");               
+            }
 
             trk1.currentTime = $("#seekbar").val();
             trk2.currentTime = $("#seekbar").val();
