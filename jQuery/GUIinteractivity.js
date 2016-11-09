@@ -180,6 +180,8 @@ $(window).load(function() {
             playbutton.addClass("playing");
             playbutton.html("pause");
 
+            $("audio").currentTime = $("#seekbar").val();
+
             if ($("#ch1").prop("checked")) {
                 trk1.play();
             } 
@@ -239,18 +241,7 @@ $(window).load(function() {
                 playbutton.html("play");               
             }
 
-            trk1.currentTime = $("#seekbar").val();
-            trk2.currentTime = $("#seekbar").val();
-            trk3.currentTime = $("#seekbar").val();
-            trk4.currentTime = $("#seekbar").val();
-            trk5.currentTime = $("#seekbar").val();
-            trk6.currentTime = $("#seekbar").val();
-            trk7.currentTime = $("#seekbar").val();
-            trk8.currentTime = $("#seekbar").val();
-            trk9.currentTime = $("#seekbar").val();
-            trk10.currentTime = $("#seekbar").val();
-            trk11.currentTime = $("#seekbar").val();
-            trk12.currentTime = $("#seekbar").val();
+            $("audio").currentTime = $("#seekbar").val();
 
             if ($("#ch1").prop("checked")) {
                 trk1.play();
