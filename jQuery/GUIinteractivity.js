@@ -41,18 +41,7 @@ function pauseAudio() {
 }
 
 function resetAudio() {
-    trk1.currentTime = 0;
-    trk2.currentTime = 0;
-    trk3.currentTime = 0;
-    trk4.currentTime = 0;
-    trk5.currentTime = 0;
-    trk6.currentTime = 0;
-    trk7.currentTime = 0;
-    trk8.currentTime = 0;
-    trk9.currentTime = 0;
-    trk10.currentTime = 0;
-    trk11.currentTime = 0;
-    trk12.currentTime = 0;
+    $("audio").currentTime = 0;
 }
 
 $(window).load(function() {
