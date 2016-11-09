@@ -1,13 +1,13 @@
 input[type=range]{
     /*required for proper track sizing in FF*/
-    width: 500px;
+    width: 580px;
 
     top: 4px;
     position: relative;
 }
 
 input[type=range]::-moz-range-track {
-    width: 500px;
+    width: 580px;
     height: 10px;
     background: $highlightPurple;
 
@@ -33,7 +33,6 @@ input[type=range]::-moz-range-thumb {
     background: $highlightPurple + #111;
     border: none;
     border-radius: 0;
-    //border: 2px solid $highlightPurple;
 }
 
 .noUi-horizontal {

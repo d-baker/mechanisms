@@ -39,6 +39,10 @@ h2 {
     font-size: 18px;
 }
 
+a {
+    color: $highlightPurple;
+}
+
 audio {
     display: none;
 }
@@ -95,20 +99,21 @@ form {
 }
 
 .play {
-        text-align: center;
+    text-align: center;
 
-        border: none;
-        background: $highlightPurple;
-        cursor: pointer;
+    border: none;
+    background: $highlightPurple;
+    cursor: pointer;
 
-        padding: 3px 20px 10px 20px;
-        margin: 20px auto;
+    padding: 3px 20px 10px 20px;
+    margin: 20px auto;
 
-        font-family: "Source Code Pro";
-        font-variant: small-caps;
-        font-weight: bold;
-        font-size: 30px;
-        color: white;
+    font-family: "Source Code Pro";
+    font-variant: small-caps;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    width: 120px;
 }
 
 #seekbar-ctrls {
