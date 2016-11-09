@@ -8,15 +8,11 @@ function isPlaying(audio) {
 
 // I know, I know.
 function anyPlaying() {
-    var playing = false;
-    
-    $.each($("audio"), function() {
-        if (isPlaying($(this))) {
-            playing = true;
-        }
-    });
-
-    return playing;
+    if (isPlaying(trk1) || isPlaying(trk2) || isPlaying(trk3) || isPlaying(trk4) || isPlaying(trk5) || isPlaying(trk6) || isPlaying(trk7) || isPlaying(trk8) || isPlaying(trk9) || isPlaying(trk10) || isPlaying(trk11) || isPlaying(trk12)) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 function anyChecked() {
