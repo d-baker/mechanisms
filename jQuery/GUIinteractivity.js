@@ -72,22 +72,21 @@ $(window).load(function() {
     $(".onoff input").prop("checked", true);
     $("#chall").prop("checked", true);
 
-    //checkall box
     $("#chall").click(function() {
-        if ($(this).prop("checked")) {
+        if ($("#chall").prop("checked")) {
             $(".onoff input").prop("checked", true);
-            $(this).text("Uncheck all");
             $("tr").addClass("activetrack");
-            pauseAudio();
-            resetAudio();
+            $.each($("noUi-target"), function() {
+                $(this).removeAttribute("disabled");
+            })
         } else {
             $(".onoff input").prop("checked", false);
-            $(this).text("Check all");
             $("tr").removeClass("activetrack");
-            pauseAudio();
-            resetAudio();
+            $.each($("noUi-target"), function() {
+                $(this).setAttribute("disabled", true);
+            })
         }
-    });
+    })
 
     // enabled or disabled CSS for tracknames - this has to be separate to the later instance of thecheckbox.change handler (inside the play.click function) as it needs to start working even before the play button is clicked.
     $(".onoff input").change(function () {
@@ -96,74 +95,98 @@ $(window).load(function() {
 
         if ($("#ch1").prop("checked")) {
             $("#t1").addClass("activetrack");
+            $("#s1").get(0).removeAttribute("disabled");
         } else {
             $("#t1").removeClass("activetrack");
+            $("#s1").get(0).setAttribute("disabled", true);
         }
 
         if ($("#ch2").prop("checked")) {
             $("#t2").addClass("activetrack");
+            $("#s2").get(0).removeAttribute("disabled");
         } else {
             $("#t2").removeClass("activetrack");
+            $("#s2").get(0).setAttribute("disabled", true);
         }
 
         if ($("#ch3").prop("checked")) {
             $("#t3").addClass("activetrack");
+            $("#s3").get(0).removeAttribute("disabled");
         } else {
             $("#t3").removeClass("activetrack");
+            $("#s3").get(0).setAttribute("disabled", true);
         }
 
         if ($("#ch4").prop("checked")) {
             $("#t4").addClass("activetrack");
+            $("#s4").get(0).removeAttribute("disabled");
         } else {
             $("#t4").removeClass("activetrack");
+            $("#s4").get(0).setAttribute("disabled", true);
         }
 
         if ($("#ch5").prop("checked")) {
             $("#t5").addClass("activetrack");
+            $("#s5").get(0).removeAttribute("disabled");
         } else {
             $("#t5").removeClass("activetrack");
+            $("#s5").get(0).setAttribute("disabled", true);
         }
 
         if ($("#ch6").prop("checked")) {
             $("#t6").addClass("activetrack");
+            $("#s6").get(0).removeAttribute("disabled");
         } else {
             $("#t6").removeClass("activetrack");
+            $("#s6").get(0).setAttribute("disabled", true);
         }
 
         if ($("#ch7").prop("checked")) {
             $("#t7").addClass("activetrack");
+            $("#s7").get(0).removeAttribute("disabled");
         } else {
             $("#t7").removeClass("activetrack");
+            $("#s7").get(0).setAttribute("disabled", true);
         }
 
         if ($("#ch8").prop("checked")) {
             $("#t8").addClass("activetrack");
+            $("#s8").get(0).removeAttribute("disabled");
         } else {
             $("#t8").removeClass("activetrack");
+            $("#s8").get(0).setAttribute("disabled", true);
         }
 
         if ($("#ch9").prop("checked")) {
             $("#t9").addClass("activetrack");
+            $("#s9").get(0).removeAttribute("disabled");
         } else {
             $("#t9").removeClass("activetrack");
+            $("#s9").get(0).setAttribute("disabled", true);
         }
 
         if ($("#ch10").prop("checked")) {
             $("#t10").addClass("activetrack");
+            $("#s10").get(0).removeAttribute("disabled");
         } else {
             $("#t10").removeClass("activetrack");
+            $("#s10").get(0).setAttribute("disabled", true);
         }
 
         if ($("#ch11").prop("checked")) {
             $("#t11").addClass("activetrack");
+            $("#s11").get(0).removeAttribute("disabled");
         } else {
             $("#t11").removeClass("activetrack");
+            $("#s11").get(0).setAttribute("disabled", true);
         }
 
         if ($("#ch12").prop("checked")) {
             $("#t12").addClass("activetrack");
+            $("#s12").get(0).removeAttribute("disabled");
         } else {
             $("#t12").removeClass("activetrack");
+            $("#s12").get(0).setAttribute("disabled", true);
         }
 
     });
