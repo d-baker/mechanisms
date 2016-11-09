@@ -6,8 +6,6 @@
         <meta charset="UTF-8" />
         <title>Mechanism #1</title>
 
-        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
-
         <noscript> <link rel="stylesheet" type="text/css" href="css/noJS.css">
         </noscript>
 
@@ -18,6 +16,9 @@
 
         <!-- slider -->
         <script src="jQuery/jquery.nouislider.min.js"></script>
+        <script src="jQuery/tablerow-color.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 
     </head>
 
@@ -27,7 +28,20 @@
         It appears that Javascript is disabled in your browser, meaning some aspects of this website will not display or function correctly. 
         <br> To learn how to enable Javascript, <a href="http://www.enable-javascript.com/"> click here </a>
         </noscript>
+
+
             <div id="container">
+
+                <header>
+                    <h1>Mechanism #1</h1>
+                    <h2>polyrhythm</h2>
+                </header>
+
+                <p class="credits">Music and JavaScript <a target="_blank" href="http://memoriata.com">by Dorothea Baker</a>.</p>
+
+                <p class="info">Read <a target="_blank" href="http://memoriata.com/music/mechanisms/">instructions &amp; more information</a>.</p>
+                
+                <p class="info"><a target="_blank" href="2.html">Try Mechanism #2!</a></p>
 
                 <button class="play">play</button>
 
@@ -36,12 +50,6 @@
                     <input type="range" step="any" value="0" id="seekbar">
                     <p id="timecode"></p>
                 </div>
-
-                <!-- TODO - checkall box -->
-                <form>
-                    <p class="chall">check all</p>
-                    <input type="checkbox" id="chall"> 
-                </form>
 
                 <!--
                 <p class="mall">Mute all</p>
@@ -52,7 +60,9 @@
                 <table>
                     <tr>
                         <th id="title">track name</th>
-                        <th id="onoff">on/off</th>
+                        <th id="onoff">on/off
+                            <input type="checkbox" id="chall"> 
+                        </th>
                         <th id="vol">volume</th>
                         <th></th>
                     </tr>
@@ -229,9 +239,6 @@
 
             <!-- initialising variables and sliders -->
             <script src="jQuery/GUIinit1.js"></script>
-
-            <!-- algorithm for determining the state of the play button -->
-            <script src="jQuery/GUIplayToggle.js"></script>
 
             <!-- the actual interactivity -->
             <script src="jQuery/GUIinteractivity.js"></script>   
