@@ -1,9 +1,10 @@
-
 $fg: #131313;
 $bg: #eee;
-$highlight: #1f7a7a;
-$comment: #888;
-$header-height: 60px;
+$highlightBlue: #027185;
+$highlightPurple: #683996;
+$highlightGreen: #1AA80A;
+$comment: #839496;
+
 
 @import "seekbar";
 @import "jquery.nouislider";
@@ -11,14 +12,14 @@ $header-height: 60px;
 body {
     margin: auto;
     font-family: "Source Code Pro";
-    font-size: 12px;
+    font-size: 16px;
 	background: #eee;
 }
 
 #container {
     display: block;
     margin: auto;
-    width: 700px;
+    width: 900px;
     height: 100%;
 }
 
@@ -27,16 +28,16 @@ audio {
 }
 
 table {
+    border: 1px dashed $comment;
     border-spacing: 0;
-    background: #ccc;
-    border: 1px solid $comment;
-    border-radius: 3px;
+    width: 100%;
 }
 
 th {
     padding: 10px;
     background: $bg; 
     color: $fg;
+    text-transform: uppercase;
 }
 
 .activetrack {
@@ -44,15 +45,15 @@ th {
 }
 
 .trackname {
-    width: 100px;
-    padding-left: 10px;
+    width: 60px;
+    padding-left: 30px;
+    text-transform: capitalize;
 }
-.activetrack td.trackname {
-    color: #1f7a7a;
-}
+
 .percent {
     width: 30px;
-    padding-left: 10px;
+    padding-left: 30px;
+    padding-right: 15px;
 }
 
 .activetrack td.percent {
@@ -60,7 +61,8 @@ th {
 }
 
 .onoff {
-    padding-left: 15px;
+    width: 50px;
+    text-align: center;
 }
 
 .volume {
@@ -75,18 +77,20 @@ form {
 }
 
 .play {
-    border: 1px solid $comment + #222;
-    border-radius: 3px;
-    background: white;
-    color: $fg;
-    cursor: pointer;
-    font-family: "Source Code Pro";
-	font-size: 12px;
-}
+        text-align: center;
 
-#seekbar {
-    position: relative;
-    top: 4px;
+        border: none;
+        background: $highlightPurple;
+        cursor: pointer;
+
+        padding: 3px 20px 10px 20px;
+        margin: 20px auto;
+
+        font-family: "Source Code Pro";
+        font-variant: small-caps;
+        font-weight: bold;
+        font-size: 30px;
+        color: white;
 }
 
 #seekbar-ctrls {

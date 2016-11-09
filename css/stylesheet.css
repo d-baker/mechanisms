@@ -14,7 +14,7 @@ input[type=range]::-moz-range-thumb {
   width: 20px;
   border-radius: 3px;
   background: white;
-  border: 1px solid #aaaaaa;
+  border: 1px solid #a5b6b8;
   cursor: pointer; }
 
 input[type=range] {
@@ -26,7 +26,7 @@ input[type=range]::-webkit-slider-runnable-track {
   background: white;
   border: none;
   border-radius: 3px;
-  border: 1px solid #aaaaaa; }
+  border: 1px solid #a5b6b8; }
 
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
@@ -35,7 +35,7 @@ input[type=range]::-webkit-slider-thumb {
   width: 20px;
   border-radius: 3px;
   background: white;
-  border: 1px solid #aaaaaa;
+  border: 1px solid #a5b6b8;
   margin-top: -4px; }
 
 input[type=range]:focus {
@@ -124,8 +124,8 @@ input[type=range]:focus {
 /* Styling;
  */
 .noUi-background {
-  background: #eeeeee;
-  border: 1px solid #888888; }
+  background: #eee;
+  border: 1px solid #839496; }
 
 .noUi-connect {
   background: #3FB8AF;
@@ -142,7 +142,7 @@ input[type=range]:focus {
   box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB; }
 
 .noUi-target.noUi-connect {
-  box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45), 0 3px 6px -5px #bbbbbb; }
+  box-shadow: inset 0 0 3px rgba(51, 51, 51, 0.45), 0 3px 6px -5px #BBB; }
 
 /* Handles and cursors;
  */
@@ -153,9 +153,9 @@ input[type=range]:focus {
   cursor: n-resize; }
 
 .noUi-handle {
-  border: 1px solid #888888;
+  border: 1px solid #839496;
   border-radius: 3px;
-  background: #eeeeee;
+  background: #eee;
   cursor: default; }
 
 /* Disabled state;
@@ -170,48 +170,48 @@ input[type=range]:focus {
 body {
   margin: auto;
   font-family: "Source Code Pro";
-  font-size: 12px;
+  font-size: 16px;
   background: #eee; }
 
 #container {
   display: block;
   margin: auto;
-  width: 700px;
+  width: 900px;
   height: 100%; }
 
 audio {
   display: none; }
 
 table {
+  border: 1px dashed #839496;
   border-spacing: 0;
-  background: #ccc;
-  border: 1px solid #888888;
-  border-radius: 3px; }
+  width: 100%; }
 
 th {
   padding: 10px;
-  background: #eeeeee;
-  color: #131313; }
+  background: #eee;
+  color: #131313;
+  text-transform: uppercase; }
 
 .activetrack {
   background: #fff; }
 
 .trackname {
-  width: 100px;
-  padding-left: 10px; }
-
-.activetrack td.trackname {
-  color: #1f7a7a; }
+  width: 60px;
+  padding-left: 30px;
+  text-transform: capitalize; }
 
 .percent {
   width: 30px;
-  padding-left: 10px; }
+  padding-left: 30px;
+  padding-right: 15px; }
 
 .activetrack td.percent {
   color: black; }
 
 .onoff {
-  padding-left: 15px; }
+  width: 50px;
+  text-align: center; }
 
 .volume {
   width: 500px; }
@@ -223,18 +223,20 @@ form {
   position: relative; }
 
 .play {
-  border: 1px solid #aaaaaa;
-  border-radius: 3px;
-  background: white;
-  color: #131313;
+  text-align: center;
+  border: none;
+  background: #683996;
   cursor: pointer;
+  padding: 3px 20px 10px 20px;
+  margin: 20px auto;
   font-family: "Source Code Pro";
-  font-size: 12px; }
-
-#seekbar {
-  position: relative;
-  top: 4px; }
+  font-variant: small-caps;
+  font-weight: bold;
+  font-size: 30px;
+  color: white; }
 
 #seekbar-ctrls {
   display: inline-block;
   padding-left: 10px; }
+
+/*# sourceMappingURL=stylesheet.css.map */
