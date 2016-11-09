@@ -15,18 +15,23 @@ header {
 
 h1, h2 {
   font-weight: normal;
-  display: inline; }
+  display: inline;
+  font-size: 30px; }
 
 h2 {
   color: #839496;
-  font-style: italic;
-  margin-left: 20px; }
+  font-style: italic; }
+  h2:before {
+    content: " - "; }
 
 .credits, .info {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 18px; }
 
 a {
+  color: #027185; }
+
+a:visited {
   color: #683996; }
 
 audio {
@@ -55,7 +60,10 @@ th {
   padding-left: 30px;
   padding-right: 15px; }
 
-.activetrack td.percent {
+td.percent, td.trackname {
+  color: grey; }
+
+.activetrack td.percent, .activetrack td.trackname {
   color: black; }
 
 .onoff {
@@ -245,7 +253,7 @@ input[type=range]::-moz-range-thumb {
   border: none; }
 
 .noUi-background {
-  background: #794aa7;
+  background: #a2a2a2;
   border: none;
   border-radius: 0; }
 
@@ -255,8 +263,14 @@ input[type=range]::-moz-range-thumb {
     height: 25px;
     width: 15px;
     top: -8px;
-    border: 2px solid #683996;
+    border: 2px solid #a2a2a2;
     border-radius: 0;
     background: white; }
+
+.activetrack .noUi-background {
+  background: #794aa7; }
+.activetrack .noUi-horizontal .noUi-handle {
+  border: 2px solid #683996;
+  background: white; }
 
 /*# sourceMappingURL=stylesheet.css.map */

@@ -26,12 +26,15 @@ header {
 h1, h2 {
     font-weight: normal;
     display: inline;
+    font-size: 30px;
 }
 
 h2 {
     color: $comment;
     font-style: italic;
-    margin-left: 20px;
+    &:before {
+        content: " - ";
+    }
 }
 
 .credits, .info {
@@ -40,6 +43,9 @@ h2 {
 }
 
 a {
+    color: $highlightBlue;
+}
+a:visited {
     color: $highlightPurple;
 }
 
@@ -74,8 +80,14 @@ th {
     padding-right: 15px;
 }
 
-.activetrack td.percent {
-    color: black;
+td.percent, td.trackname {
+    color: grey;
+}
+
+.activetrack {
+    td.percent, td.trackname {
+        color: black;
+    }
 }
 
 .onoff {
