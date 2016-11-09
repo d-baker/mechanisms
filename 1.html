@@ -46,9 +46,9 @@
                 <button class="play">play</button>
 
                 <div id="seekbar-ctrls">
-                    <p id="negTimecode">-4:48</p>
-                    <input type="range" step="any" value="0" id="seekbar">
                     <p id="timecode">0:00</p>
+                    <input type="range" step="any" value="0" id="seekbar">
+                    <p id="negTimecode">-4:48</p>
                 </div>
 
                 <!--
@@ -60,11 +60,18 @@
                 <table>
                     <tr>
                         <th id="title">track name</th>
-                        <th class="onoff">on/off
-                            <input type="checkbox" id="chall"> 
-                        </th>
+                        <th class="onoff">on/off</th>
                         <th id="vol">volume</th>
                         <th></th>
+                    </tr>
+
+                    <tr id="all-controls" class="activetrack">
+                        <td class="trackname"><p>All</p></td>
+                        <td class="onoff">
+                            <input type="checkbox" id="chall"> 
+                        </td>
+                        <td></td>
+                        <td></td>
                     </tr>
 
                     <tr id="t1" class="activetrack"> 

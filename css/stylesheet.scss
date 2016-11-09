@@ -75,7 +75,7 @@ th {
 }
 
 .percent {
-    width: 30px;
+    width: 40px;
     padding-left: 30px;
     padding-right: 15px;
 }
@@ -106,10 +106,6 @@ form {
     position: relative;
 }
 
-#chall {
-    margin-top: 10px;
-}
-
 .play {
     text-align: center;
 
@@ -126,6 +122,14 @@ form {
     font-size: 30px;
     color: white;
     width: 120px;
+}
+
+#all-controls {
+    p {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    padding: 16px 0px;
 }
 
 #seekbar-ctrls {
