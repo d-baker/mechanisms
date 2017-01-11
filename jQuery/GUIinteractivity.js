@@ -1,3 +1,5 @@
+$("audio").attr("preload", "none");
+
 function isPlaying(audio) { 
     if (audio.duration > 0 && !audio.paused) {
         return true;
