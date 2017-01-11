@@ -1,5 +1,3 @@
-$("audio").attr("preload", "none");
-
 function isPlaying(audio) { 
     if (audio.duration > 0 && !audio.paused) {
         return true;
@@ -48,6 +46,7 @@ function resetAudio() {
 
 $(window).load(function() {
     //setup
+    $("audio").attr("preload", "none");
     $(".onoff input").prop("checked", true);
     $("#chall").prop("checked", true);
 
